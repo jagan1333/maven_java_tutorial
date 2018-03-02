@@ -12,7 +12,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                    sh 'cd NumberGenerator & mvn clean install'
+                    sh 'echo "hello"'
             }
              post {
                 success {
