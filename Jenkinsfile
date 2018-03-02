@@ -5,8 +5,8 @@ pipeline {
         stage ('Initialize') {
             steps {
                 
-                 sh echo "PATH = %PATH%"
-                 sh echo "M2_HOME = %M2_HOME%"
+                 sh 'echo "PATH = %PATH%"'
+                 sh 'echo "M2_HOME = %M2_HOME%"'
             }
         }
 
