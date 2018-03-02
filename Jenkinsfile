@@ -1,6 +1,5 @@
 pipeline {
-    agent {
-        label "windows"
+    agent any {
     }
     tools {
         maven 'Maven3.1.1'
@@ -9,16 +8,15 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
-                bat '''
-                    echo "PATH = %PATH%"
-                    echo "M2_HOME = %M2_HOME%"
-                '''
+                
+                 sh echo "PATH = %PATH%"
+                 sh echo "M2_HOME = %M2_HOME%"
             }
         }
 
         stage ('Build') {
             steps {
-                    bat 'cd NumberGenerator & mvn install'
+                    sh 'cd NumberGenerator & mvn install'
             }
              post {
                 success {
